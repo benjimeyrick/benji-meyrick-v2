@@ -1,0 +1,40 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id=".wl,=$CXP@r^xX;(L[8D">Player</variable><variable type="KIND_SpriteKind" id="iEp|D.^vv}^o*=8wYS_m">Projectile</variable><variable type="KIND_SpriteKind" id="*!V)8DGuxA6=;y~XQY-5">Food</variable><variable type="KIND_SpriteKind" id="n/(o%W!9#S]oE-%ZZ.Y5">Enemy</variable><variable id="`8vD`[`tAs]xSlgiI{Od">mySprite</variable><variable id="k(~0%})Z@.r5U]asECtr">smiley</variable><variable type="BLOCKLY_TILESET_TYPE" id="K*h!`y6d:0JD,E{ne;5~">0;16;16;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</variable><variable type="BLOCKLY_TILESET_TYPE" id="V[SzEajna.OripV7-pMV">1;16;16;7777777777777777777777ee777e77777eeeeeeeeeee7ee7eeeeeee7eeeeeeeeeeeeeeeeeeeeeee7e77eeeeeeee7eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee7eee7eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee0eeeeee0eeeeeee000eeeee00eeeee00000000000000000</variable></variables><block type="pxt-on-start" x="0" y="0"><statement name="HANDLER"><block type="gamesetbackgroundcolor"><value name="color"><shadow type="colorindexpicker"><field name="index">9</field></shadow></value><next><block type="variables_set"><field name="VAR" id="k(~0%})Z@.r5U]asECtr">smiley</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 2 2 2 2 2 . . . . . . 
+. . . . 2 2 f f f 2 2 . . . . . 
+. . . 2 2 f f f f f 2 2 . . . . 
+. . 2 2 f 5 f f f 5 f 2 2 . . . 
+. . 2 f f f f f f f f f 2 . . . 
+. . 2 f f f f 5 f f f f 2 . . . 
+. . 2 f 5 f f f f f 5 f 2 . . . 
+. . 2 2 f 5 f f f 5 f 2 2 . . . 
+. . . 2 2 f 5 5 5 f 2 2 . . . . 
+. . . . 2 2 f f f 2 2 . . . . . 
+. . . . . 2 2 2 2 2 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind"><field name="MEMBER">Player</field></shadow></value></block></value><next><block type="game_control_sprite"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="2" _input_init="true"></mutation><value name="sprite"><block type="variables_get"><field name="VAR" id="k(~0%})Z@.r5U]asECtr">smiley</field></block></value><value name="vx"><shadow type="math_number"><field name="NUM">100</field></shadow></value><value name="vy"><shadow type="math_number"><field name="NUM">0</field></shadow></value><next><block type="tilemap_editor"><field name="tilemap">tiles.createTilemap(
+            hex`1000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001010101010000000000000000000000000000000000000000000000010101010000000000010101010101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`,
+            img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+2 2 2 2 2 . . . . . . . . . . . 
+. . . . . . . . . . . . 2 2 2 2 
+. . . . . 2 2 2 2 2 2 . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`,
+            [myTiles.tile0,myTiles.tile1],
+            TileScale.Sixteen
+        )</field><next><block type="Sprite_blockCombine_set"><field name="property">Sprite.ay@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="k(~0%})Z@.r5U]asECtr">smiley</field></block></value><value name="value"><shadow type="math_number"><field name="NUM">300</field></shadow></value></block></next></block></next></block></next></block></next></block></statement></block><block type="keyonevent" x="10" y="350"><field name="button">controller.A</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="Sprite_blockCombine_set"><field name="property">Sprite.vy@set</field><value name="mySprite"><block type="variables_get"><field name="VAR" id="k(~0%})Z@.r5U]asECtr">smiley</field></block></value><value name="value"><shadow type="math_number"><field name="NUM">-140</field></shadow></value></block></statement></block></xml>

@@ -1,7 +1,8 @@
 {
     "name": "benji meyrick V2",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "animation": "*"
     },
     "description": "",
     "files": [
